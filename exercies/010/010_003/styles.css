@@ -1,0 +1,117 @@
+body {
+	font-family: Arial;
+	/*font-family: bbva-icons;*/
+}
+
+h1 {
+	color: green;
+	text-align: center;
+	font-size: 20px;
+/*	font-size: 2vw;*/ /* de acuerdo al ancho */
+}
+h2 {
+	color: green;
+	text-align: center;
+	font-size: 14px;
+}
+
+/* Begin Aside */
+#carta {
+	width: 30%;
+	display: inline-block;
+	text-align: center;
+	margin: 0px;
+	float: left;
+}
+
+/* Begin Table Carta */
+table {
+	width: 90%;
+	margin: 10px 5px;
+	display: inline-table;
+	font-size: 12px;
+	text-align: left;
+}
+th, td {
+	padding: 2px;
+	margin: 0px;
+}
+th {
+	border-bottom: 1px solid #afafaf;
+	color: #77ccff;
+}
+td {
+	border-bottom: 1px solid #cfcfcf;
+}
+.product-name {
+	font-weight: bold;
+}
+.product-info {
+	text-align: center;
+}
+
+/* End Table Carta */
+/* End Aside */
+
+/* Begin Right Content Header */
+#mesas {
+	width: 69%;
+	display: inline-block;
+	text-align: center;
+}
+.mesa {
+	font-size: 10px;
+	display: inline-block;
+	text-align: center;
+	width: 16%;
+	margin: 2px;
+	padding: 0px 5px;
+	background: #aadfff;
+	background: -moz-linear-gradient(top,#77ccff 0,#aadfff 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#77ccff),color-stop(100%,#aadfff));
+    background: -webkit-linear-gradient(top,#77ccff 0,#aadfff 100%);
+    background: -o-linear-gradient(top,#77ccff 0,#aadfff 100%);
+    background: -ms-linear-gradient(top,#77ccff 0,#aadfff 100%);
+    background: linear-gradient(to bottom,#77ccff 0,#aadfff 100%);
+    border: 1px solid #aadfff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.mesa p {
+	text-align: left;
+	margin: 2px 0px;
+}
+
+.mesa p.icon {
+	text-align: right;
+	height: 20px;
+}
+/* End Right Content Header */
+
+@media (max-width: 750px){
+	#mesas, #carta{
+		display: block;
+		/*width: 100%;*/
+	}
+	#mesas {
+		width: 90%;
+	}
+	#carta {
+		width: 90%;
+	}
+}
+
+@media (max-width: 500px) {
+	h1 {
+		font-size: 16px;
+		margin: 2px 0px;
+	}
+	h2 {
+		font-size: 12px;
+	}
+
+	.mesa {
+		width: 44%;
+	}
+}

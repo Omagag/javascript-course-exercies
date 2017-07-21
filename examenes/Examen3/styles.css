@@ -1,0 +1,48 @@
+#header {
+  text-align: center;
+}
+
+#nav {
+  text-align: center;
+}
+
+#detalle-pokemon {
+  text-align: center;
+}
+
+#content-loader {
+  width: 100%;
+  min-height: 100%;
+  background-color: #f5f5f5;
+  filter:alpha(opacity=60); /* IE */
+  -moz-opacity:0.6; /* Mozilla */
+  opacity: 0.6; /* CSS3 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  display: block;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

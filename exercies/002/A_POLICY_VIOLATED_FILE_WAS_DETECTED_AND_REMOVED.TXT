@@ -1,0 +1,1 @@
+﻿ScanMail detected and removed a file named "fire-alarm-short.mp3" that violated attachment blocking policy from the original mail entity. You can safely save or delete this replacement attachment.

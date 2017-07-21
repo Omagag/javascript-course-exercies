@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 007__001</title>
+	<meta charset="utf-8">
+	<!--<script type="text/javascript" src="index.js"></script>-->
+	<script type="text/javascript" src="ejercicio_007__002.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<article>
+	<h1>Venga las Carreras!!!</h1>
+	<section class="row content-form">
+		<form id="inscripcion-form" class="col_6">
+			<fieldset>
+				<legend>Inscripción de Participantes</legend>
+
+				<p class="col_5">
+					<label for="marcas" class="col_3">Marca</label>
+					<select id="marcas" name="marcas" class="col_6">
+						<option>Selecciona</option>
+					</select>
+				</p>
+				<p class="col_5">
+					<label for="modelos" class="col_3">Módelo</label>
+					<select id="modelos" name="modelos" class="col_6">
+						<option>Selecciona</option>
+					</select>
+				</p>
+				<p class="col_5">
+					<label for="velocidad" class="col_3">Velocidad</label>
+					<input id="velocidad" name="velocidad" class="col_6" type="number" min="100" max="200"/>
+				</p>
+				<p class="col_5">
+					<label for="aceleracion" class="col_3">Aceleración</label>
+					<input id="aceleracion" name="aceleracion" class="col_6" type="number" min="1" max="10"/>
+				</p>
+				<p class="col_5">
+					<label for="icons" class="col_3">Imagen</label>
+					<select id="icons" name="icons" class="col_6">
+						<option>Selecciona</option>
+					</select>
+				</p>
+				<p class="col_10">
+					<button type="button" onclick="inscribir(event);">Inscribir</button>
+				</p>
+			</fieldset>
+		</form>
+		<div class="row buttons">
+			<button class="button-start" onclick="iniciarCiclo();">Comenzar carrera!!!</button>
+			<button class="button-stop" onclick="detenerCiclo();">Suspender carrera!!!</button>
+			<button class="button-reload" onclick="location.reload()">RESET</button>
+		</div>		
+	</section>
+	<section id="messages">
+		<p>No hay competidores!!!</p>
+	</section>
+		
+	<section id="pistas"></section>
+	<section id="content-ganador">
+		<h2></h2>
+		<img alt="" src="vehiculos/finish.png" />
+		<!--<img id="ganador" alt="" />-->
+	</section>
+</article>
+</body>
+</html>

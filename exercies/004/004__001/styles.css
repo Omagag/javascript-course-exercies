@@ -1,0 +1,226 @@
+/*
+Ejercicio 005__001
+
+Realiza la maquetación de una de estas dos páginas:
+https://www.bancomer.com/index.jsp
+http://www.eluniversal.com.mx
+
+Trata de ser lo más correcto posible en la elección de las etiquetas HTML a usar.
+Debes incluir en tu ejercicio un documento HTML y una hoja de estilos.
+
+Comprueba que tu página no contiene ningún error en:
+https://validator.w3.org/
+*/
+
+body {
+	font-family: Arial;
+	/*font-family: bbva-icons;*/
+}
+
+.row {
+	width: 100%;
+    overflow: hidden;
+    margin: 1px;
+    padding: 1px;
+}
+.col_1 {
+	width: 10%;
+	float: left;
+}
+.col_2 {
+	width: 20%;
+	float: left;
+}
+.col_3 {
+	width: 30%;
+	float: left;
+}
+.col_4 {
+	width: 40%;
+	float: left;
+}
+.col_5 {
+	width: 50%;
+	float: left;
+}
+.col_6 {
+	width: 60%;
+	float: left;
+}
+.col_7 {
+	width: 70%;
+	float: left;
+}
+.col_8 {
+	width: 80%;
+	float: left;
+}
+.col_9 {
+	width: 90%;
+	float: left;
+}
+.col_10 {
+	width: 100%;
+	float: left;
+}
+
+/* HEADER */
+.header {
+	height: 100px;
+}
+.logo {
+	color: #005698;
+	/*display: inline-block;*/
+	/*width: 49%;*/
+	height: 50px;
+}
+.accesos {
+	display: inline-block;
+	position: relative;
+	text-align: left;
+	height: 50px;
+	color: #8B9098;
+	font-size: 13px;
+}
+.accesos-menu-elemento {
+	display: inline-block;
+}
+.contactanos {
+	color: #b2353e;
+	font-size: 11px;
+	text-align: right;
+}
+.login-seccion {
+	margin: 15px;
+	padding: 15px;
+}
+.login-seccion button {
+	width: 150px;
+	font-size: 14px;
+	padding: 5px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.login {
+	color: white;
+	background: #59c000;
+	background: -moz-linear-gradient(top,#59c000 0,#499900 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#59c000),color-stop(100%,#499900));
+    background: -webkit-linear-gradient(top,#59c000 0,#499900 100%);
+    background: -o-linear-gradient(top,#59c000 0,#499900 100%);
+    background: -ms-linear-gradient(top,#59c000 0,#499900 100%);
+    background: linear-gradient(to bottom,#59c000 0,#499900 100%);
+    border: 1px solid #499900;
+}
+.sigin {
+	color: white;
+	background: #00559d;
+	background: -moz-linear-gradient(top,#0079c1 0,#00559d 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#0079c1),color-stop(100%,#00559d));
+    background: -webkit-linear-gradient(top,#0079c1 0,#00559d 100%);
+    background: -o-linear-gradient(top,#0079c1 0,#00559d 100%);
+    background: -ms-linear-gradient(top,#0079c1 0,#00559d 100%);
+    background: linear-gradient(to bottom,#0079c1 0,#00559d 100%);
+    border: 1px solid #00559d;
+	
+}
+/* HEADER */
+
+.menu ul,
+.menu ol,
+.accesos ul,
+.footer ul {
+	list-style: none;
+	height: 40px;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* MENU */
+.menu {
+	color: white;
+	background: #0079c1;
+    background: -moz-linear-gradient(top,#0079c1 0,#00529b 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#0079c1),color-stop(100%,#00529b));
+    background: -webkit-linear-gradient(top,#0079c1 0,#00529b 100%);
+    background: -o-linear-gradient(top,#0079c1 0,#00529b 100%);
+    background: -ms-linear-gradient(top,#0079c1 0,#00529b 100%);
+    background: linear-gradient(to bottom,#0079c1 0,#00529b 100%);
+    font-size: 13px;
+	height: 40px;
+}
+.menu a {
+	color: white;
+}
+.menu a:hover {
+	color: #dfdfdf;
+}
+.menu h3 {
+	font-size: 12px;
+	/*width: 50px;*/
+}
+.menu li,
+.elemento-menu {
+	text-align: center;
+	display: inline-block;
+}
+.menu form {
+	display: inline-block;
+	margin: 10px;
+}
+/* MENU */
+
+/* CONTENT */
+.content h1 {
+	color: white;
+	text-shadow: #000 0.1em 0.1em 0.2em;
+	text-align: center;
+}
+/* CONTENT */
+
+/* FOOTER */
+.footer {
+	height: 280px;
+	text-align: center;
+}
+.footer a {
+	color: #8c9299;
+	font-size: 10px;
+}
+.footer a:hover {
+	color: #8c9299;
+	font-size: 10px;
+}
+.footer .links {
+	height: 230px;
+	margin: 5px;
+	text-align: left;
+}
+.footer .info {
+	height: 20px;
+	margin: 5px
+}
+.info li {
+	display: inline-block;
+}
+/* FOOTER */
+
+
+/* GENERICO */
+input {
+	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 2px;
+}
+/* GENERICO */
+
+
+a {
+	text-decoration: none;
+}
+a:hover {
+	color: #004C99;
+}
+

@@ -1,0 +1,116 @@
+h1 {
+	display: inline-block;
+	text-transform: uppercase;
+	color: #FFF;
+	text-shadow: black 1px 1px 5px;
+	font-size: 40px;
+}
+
+body {
+	background-image: url('grass.jpg');
+	background-size: cover;
+}
+
+.iphone {
+	background-image: url('iphone.png');
+	background-size: cover;
+	background-position: center;
+	width: 240px;
+	height: 494px;
+	display: inline-block;
+	margin-right: 20px;
+	position: relative;
+}
+
+.identificador {
+	color: red;
+	position: absolute;
+	top: 2%;
+	right: 15%;
+	font-size: 40px;
+}
+
+.messages {
+	background-color: #d4d4d4;
+	width: 86%;
+	height: 66%;
+	top: 12%;
+	left: 7%;
+	overflow-y: scroll;
+	position: absolute;
+	background-image: url('pig-wallpaper.jpg');
+	background-size: auto 100%;
+	background-position: center;
+}
+
+.message {
+	width: 70%;
+	display: inline-block;
+	float: left;
+	min-height: 10px;
+	border-radius: 10px;
+	background-color: #FFF;
+	margin: 5px 10px;
+	padding: 5px 10px;
+	font-size: 16px;
+}
+
+.message__username {
+	color: gray;
+	font-size: 14px;
+	margin-bottom: 5px;
+	text-align: right;
+}
+
+.message.messageOwn {
+	float: right;
+	background-color: #8bc34a;
+}
+
+.send-message-bar {
+	position: absolute;
+	width: 86%;
+	left: 7%;
+	bottom: 12%;
+	height: 10%;
+}
+
+.send-message-bar__inner {
+	position: relative;
+	height: 100%;
+	background-color: #8bc34a;
+}
+
+.send-message-bar textarea {
+	height: 80%;
+	width: 60%;
+	display: inline-block;
+	float: left;
+	margin: 0;
+	padding: 5px;
+	border: none;
+	resize: none;
+}
+
+.send-message-bar button {
+	height: 50%;
+	width: 30%;
+	display: inline-block;
+	float: right;
+	padding: 0;
+	margin: 0;
+	color: #FFF;
+	background: #000;
+	border: none;
+}
+
+.send-message-bar select {
+	height: 50%;
+	width: 30%;
+	display: inline-block;
+	float: right;
+	padding: 0;
+	margin: 0;
+	border: none;
+	border-radius: 0px;
+}

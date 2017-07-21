@@ -1,0 +1,60 @@
+body{
+	background-color: #8BC34A;
+}
+
+h1{
+	display: inline-block;
+	text-transform: uppercase;
+	color: #FFF;
+	text-shadow: black 1px 1px 5px;
+	font-size: 40px;
+}
+
+.areaInner{
+	float: left;
+}
+
+.cabecera{
+	text-align: center;
+	border-bottom: 1px solid #000;
+	border-top: 1px solid #000;
+}
+
+.button-float{
+	float: right;
+	padding: 10px;
+	margin-left: 10px;
+	margin-top: 30px;
+	color: #000;
+	background: #FFF;
+	border: 1px solid #000;
+	border-radius: 3px;
+	font-weight: bold;
+}
+
+.reset{
+	background-color: #d4d4d4;
+}
+
+.open{
+	background-color: green;
+}
+
+.close{
+	background-color: red;
+}
+
+#parque{
+	text-align: center;
+}
+
+.area{
+	display: inline-block;
+	width: 20%;
+	height: 250px;
+	border: 1px solid #000;
+	margin: 10px;
+	background: rgb(199, 179, 171);
+	padding: 10px;
+}
+

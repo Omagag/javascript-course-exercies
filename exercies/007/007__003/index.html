@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Examen Semana 2 - Amenzon!!!</title>
+	<meta charset="utf-8">
+	<!--<script type="text/javascript" src="index.js"></script>-->
+	<script type="text/javascript" src="utilerias.js"></script>
+	<script type="text/javascript" src="examen-sem2.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<article class="row">
+	<aside class="col_2">
+		<h1>Amenzon!!!</h1>
+		<form>
+			<fieldset>
+				<legend>Nuevo Producto</legend>
+				<p class="col_10">
+					<label for="nombre" class="col_4">Nombre</label>
+					<input id="nombre" name="nombre" class="col_6" type="text" min="100" max="200"/>
+				</p>
+				<p class="col_10">
+					<label for="precio" class="col_4">Precio</label>
+					<input id="precio" name="precio" class="col_6" type="number" min="100" max="200"/>
+				</p>
+				<p class="col_10">
+					<label for="descripcion" class="col_4">Descripción</label>
+					<textarea id="descripcion" name="descripcion" class="col_6" type="number" min="100" max="200"></textarea> 
+				</p>
+				<p class="col_10">
+					<label for="url-imagen" class="col_4">URL imagen</label>
+					<input id="url-imagen" name="url-imagen" class="col_6" type="url" min="100" max="200"/>
+				</p>
+				
+				<p class="col_10">
+					<button type="button" onclick="agregarProducto(event);">Agregar</button>
+				</p>
+			</fieldset>
+		</form>
+	</aside>
+
+	<section class="col_8 content-lista">
+		<h2>Lista de Productos</h2>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Imagen</th>
+					<th>Nombre</th>
+					<th>Precio</th>
+					<th>Descripción</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody id="productos"></tbody>
+		</table>
+	</section>
+
+</article>
+</body>
+</html>
