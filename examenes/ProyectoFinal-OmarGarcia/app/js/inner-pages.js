@@ -84,21 +84,32 @@ class HomePage extends AppPage {
 		this._foodApi = new FoodAPI();
 		this._drinkApi = new DrinkAPI();
 
-		this.CONFIRM_MODAL = "confirm-modal";
-		this.CONFIRM_ACTION_ID = "confirm-action";
+		this._sectionContainer = HomePage.createSectionContainer();
 
-		this.FOODS_CHART_ID = "my-foods-chart";
-		this.FOODS_CHART_2_ID = "my-foods-chart-2";
-		this.DRINKS_CHART_ID = "my-drinks-chart";
-		this.DRINKS_CHART_2_ID = "my-drinks-chart-2";
+		this.FOODS_PIE_CHART_ID = "my-foods-pie-chart";
+		this._foodsPieChart = HomePage.createCanvasChart("Existencia en Comidas", "col-md-6", this.FOODS_PIE_CHART_ID);
+		this._sectionContainer.appendChild(this._foodsPieChart);
+
+		this.FOODS_BAR_CHART_ID = "my-foods-bar-chart";
+		this._foodsBarChart = HomePage.createCanvasChart("Precios de Comidas", "col-md-6", this.FOODS_BAR_CHART_ID);
+		this._sectionContainer.appendChild(this._foodsBarChart);
+
+		this.DRINKS_PIE_CHART_ID = "my-drinks-pie-chart";
+		this._drinksPieChart = HomePage.createCanvasChart("Existencia en Bebidas", "col-md-6", this.DRINKS_PIE_CHART_ID);
+		this._sectionContainer.appendChild(this._drinksPieChart)
+
+		this.DRINKS_BAR_CHART_ID = "my-drinks-bar-chart";
+		this._drinksBarChart = HomePage.createCanvasChart("Precios de Bebidas", "col-md-6", this.DRINKS_BAR_CHART_ID);
+		this._sectionContainer.appendChild(this._drinksBarChart);
+
+		// TODO: Crear objetos de los elementosHTML
+		// TODO: Es mala practica usar un recovery ID
 	}
 	beforeRender() {
 		return true;
 	}
 	createContainer() {
-		//let container = document.createElement("section");
-
-		let sectionContainer = document.createElement("section");
+		/*let sectionContainer = document.createElement("section");
 		sectionContainer.className += "container ";
 		
 		let divPageHeader = document.createElement("div");
@@ -108,8 +119,6 @@ class HomePage extends AppPage {
 		divPageHeader.appendChild(h1);
 		sectionContainer.appendChild(divPageHeader);
 
-		let sectionCharts = document.createElement("section");
-
 		let divFoods =document.createElement("div");
 		divFoods.className = "col-md-6";
 		let h2Foods = document.createElement("h2");
@@ -117,7 +126,7 @@ class HomePage extends AppPage {
 		divFoods.appendChild(h2Foods);
 
 		let canvasFoods = document.createElement("canvas");
-		canvasFoods.id = this.FOODS_CHART_ID;
+		canvasFoods.id = this.FOODS_PIE_CHART_ID;
 		divFoods.appendChild(canvasFoods);
 
 		sectionContainer.appendChild(divFoods);
@@ -129,7 +138,7 @@ class HomePage extends AppPage {
 		divFoods2.appendChild(h2Foods2);
 
 		let canvasFoods2 = document.createElement("canvas");
-		canvasFoods2.id = this.FOODS_CHART_2_ID;
+		canvasFoods2.id = this.FOODS_BAR_CHART_ID;
 		divFoods2.appendChild(canvasFoods2);
 
 		sectionContainer.appendChild(divFoods2);
@@ -142,7 +151,7 @@ class HomePage extends AppPage {
 		divDrinks.appendChild(h2Drinks);
 
 		let canvasDrinks = document.createElement("canvas");
-		canvasDrinks.id = this.DRINKS_CHART_ID;
+		canvasDrinks.id = this.DRINKS_PIE_CHART_ID;
 		divDrinks.appendChild(canvasDrinks);
 
 		sectionContainer.appendChild(divDrinks);
@@ -154,23 +163,36 @@ class HomePage extends AppPage {
 		divDrinks2.appendChild(h2Drinks2);
 
 		let canvasDrinks2 = document.createElement("canvas");
-		canvasDrinks2.id = this.DRINKS_CHART_2_ID;
+		canvasDrinks2.id = this.DRINKS_BAR_CHART_ID;
 		divDrinks2.appendChild(canvasDrinks2);
 
 		sectionContainer.appendChild(divDrinks2);
-		/*sectionContainer.appendChild(this.createFoodForm());
 		
-		sectionContainer.appendChild(this.createFoodTable());
+		this.setContainer(sectionContainer);*/
 
-		sectionContainer.appendChild(Page.createConfirmModal(this.CONFIRM_MODAL, this.CONFIRM_ACTION_ID, null, "¿Está seguro de que desea eliminar el elemento?"));
-
-		//<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-		sectionContainer.appendChild(createModalButton("Nuevo", "button", "", "btn btn-info", this.MODAL_FORM, true, ()=>this.buttonsFor("add")));
-*/
-		this.setContainer(sectionContainer);
+		this.setContainer(this._sectionContainer);
 	}
 	afterRender() {
 		window.setTimeout(()=>this.getData(), 500);
+	}
+	static createSectionContainer() {
+		let sectionContainer = document.createElement("section");
+		sectionContainer.className += "container ";
+
+		return sectionContainer;
+	}
+	static createCanvasChart(title, containerClass, canvasId) {
+		let div =document.createElement("div");
+		div.className = containerClass;
+		let h2 = document.createElement("h2");
+		h2.textContent = title;
+		div.appendChild(h2);
+
+		let canvas = document.createElement("canvas");
+		canvas.id = canvasId;
+		div.appendChild(canvas);
+
+		return div;
 	}
 	getData() {
 		this.getFoods();
@@ -227,7 +249,7 @@ class HomePage extends AppPage {
 	    	responsive: true,
 	    };
 
-		var ctx = document.getElementById(this.FOODS_CHART_ID).getContext('2d');
+		var ctx = document.getElementById(this.FOODS_PIE_CHART_ID).getContext('2d');
 		var myPieChart = new Chart(ctx).Pie(data,option);
 
 		var data2 = {
@@ -235,15 +257,15 @@ class HomePage extends AppPage {
 		    datasets: [
 		        {
 		            label: "My First dataset",
-		            fillColor: "rgba(220,220,220,0.5)",
-		            strokeColor: "rgba(220,220,220,0.8)",
-		            highlightFill: "rgba(220,220,220,0.75)",
-		            highlightStroke: "rgba(220,220,220,1)",
+		            fillColor: "rgba(151,187,205,0.5)",
+		            strokeColor: "rgba(151,187,205,0.8)",
+		            highlightFill: "rgba(151,187,205,0.75)",
+		            highlightStroke: "rgba(151,187,205,1)",
 		            data: values
 		        }
 		    ]
 		};
-		var ctx2 = document.getElementById(this.FOODS_CHART_2_ID).getContext('2d');
+		var ctx2 = document.getElementById(this.FOODS_BAR_CHART_ID).getContext('2d');
 		var myBarChart = new Chart(ctx2).Bar(data2, option);
 	}
 	printChartDrinks() {
@@ -265,7 +287,7 @@ class HomePage extends AppPage {
 	    	responsive: true,
 	    };
 
-		var ctx = document.getElementById(this.DRINKS_CHART_ID).getContext('2d');
+		var ctx = document.getElementById(this.DRINKS_PIE_CHART_ID).getContext('2d');
 		var myPieChart = new Chart(ctx).Pie(data,option);
 
 		var data2 = {
@@ -273,15 +295,15 @@ class HomePage extends AppPage {
 		    datasets: [
 		        {
 		            label: "My First dataset",
-		            fillColor: "rgba(220,220,220,0.5)",
-		            strokeColor: "rgba(220,220,220,0.8)",
-		            highlightFill: "rgba(220,220,220,0.75)",
-		            highlightStroke: "rgba(220,220,220,1)",
+		            fillColor: "rgba(151,187,205,0.5)",
+		            strokeColor: "rgba(151,187,205,0.8)",
+		            highlightFill: "rgba(151,187,205,0.75)",
+		            highlightStroke: "rgba(151,187,205,1)",
 		            data: values
 		        }
 		    ]
 		};
-		var ctx2 = document.getElementById(this.DRINKS_CHART_2_ID).getContext('2d');
+		var ctx2 = document.getElementById(this.DRINKS_BAR_CHART_ID).getContext('2d');
 		var myBarChart = new Chart(ctx2).Bar(data2, option);
 	}
 }
@@ -1135,7 +1157,7 @@ class UserPage extends AppPage {
 		divTable.className = "col-sm-12 ";
 		
 		let h2 = document.createElement("h2");
-		h2.textContent = "Lista de Bebidas";
+		h2.textContent = "Lista de Usuarios";
 		divTable.appendChild(h2);
 		let table = document.createElement("table");
 		table.id = this.TABLE_ID;

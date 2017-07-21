@@ -90,13 +90,17 @@ class LoginPage extends Page {
 		this.showLoader();
 		this._userApi.addUser(user).then(
 			(data)=> {
-				alert(data);
+				//alert(data);
+				this.infoModal("Información", data);
+				$("#" + this.CONFIRM_MODAL).modal({show: true});
 				this.hideLoader();
-				this.clearForm();
+				this.clearNewUserForm();
 			}
 		).catch(
 			(error)=>{
-				alert(error);
+				//alert(error);
+				this.infoModal("Error", "Las datos no son correctos.");
+				$("#" + this.CONFIRM_MODAL).modal({show: true});
 				this.hideLoader();
 			}
 		);
@@ -110,7 +114,6 @@ class LoginPage extends Page {
 		
 		let user = new User(null, name, lastname, email, username, password);
 		this.addUser(user);
-		this.clearForm();
 	}
 	clearNewUserForm() {
 		setValueInput(this.FORM_ID, "");

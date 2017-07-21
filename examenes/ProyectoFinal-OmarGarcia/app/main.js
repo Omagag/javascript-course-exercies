@@ -298,7 +298,7 @@ class Navigator {
 				pageToLoad.setMenuUl(this.createMenu());
 			}
 			pageToLoad.render();
-			//window.history.pushState("Datos a enviar", pageToLoad._title, pageToLoad._uri);
+			window.history.pushState("Datos a enviar", pageToLoad._title, pageToLoad._uri);
 		}
 	}
 	navigateToHome() {
